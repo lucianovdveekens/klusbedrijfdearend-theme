@@ -1,0 +1,227 @@
+// Typography
+body {
+  @include body-font;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  @include heading-font;
+}
+
+// Custom Horizontal Rule with Cog Icon
+hr.cog-light,
+hr.cog-dark {
+  max-width: 25rem;
+  padding: 0;
+  text-align: center;
+  border: none;
+  border-top: solid 0.25rem;
+  margin-top: 2.5rem;
+  margin-bottom: 2.5rem;
+}
+
+hr.cog-light:after,
+hr.cog-dark:after {
+  position: relative;
+  top: -.8em;
+  display: inline-block;
+  padding: 0 0.25em;
+  content: '\f013';
+  font-family: FontAwesome;
+  font-size: 2em;
+}
+
+hr.cog-light {
+  border-color: $white;
+}
+hr.cog-light:after {
+  color: $white;
+  background-color: $primary;
+}
+
+hr.cog-dark {
+  border-color: $secondary;
+}
+hr.cog-dark:after {
+  color: $secondary;
+  background-color: white;
+}
+
+// Section Padding Settings
+section {
+  padding: 2rem 0;
+  h2 {
+    font-size: 2.25rem;
+    line-height: 2rem;
+  }
+  @media (min-width: 992px) {
+    padding: 4rem 0;
+    h2 {
+      font-size: 3rem;
+      line-height: 2.5rem;
+    }
+  }
+}
+
+// Custom Button Size
+.btn-xl {
+  padding: 1rem 1.75rem;
+  font-size: 1.25rem;
+}
+
+// Custom Rounded Social Button
+.btn-social {
+  width: 3.25rem;
+  height: 3.25rem;
+  font-size: 1.25rem;
+  line-height: 2rem;
+}
+
+// Scroll to Top Button
+.scroll-to-top {
+  z-index: 1042;
+  right: 1rem;
+  bottom: 1rem;
+  display: none;
+  a {
+    width: 3.5rem;
+    height: 3.5rem;
+    background-color: fade-out($gray-900, 0.5);
+    line-height: 3.1rem;
+  }
+}
+
+.header {
+  padding: 15px 0;
+  
+  @media (min-width: 992px) {
+    padding: 30px 0;
+  }
+}
+
+.header-image svg {
+  width: 50%;
+  max-width: 260px;
+  
+  path {
+    fill: white !important;
+  }
+}
+
+// *** LOGO
+
+.black-logo-hline, .white-logo-hline {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  display: block;
+  overflow: hidden;
+  text-align: center;
+  
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 60px 60px;
+  height: 60px;
+  
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.black-logo-hline {
+  background-image: url("../images/eagle-black2.png");  
+  color: black;  
+}
+
+.white-logo-hline {
+  background-image: url("../images/eagle-white.png");  
+  color: white;
+}
+
+.black-logo-hline:before, .black-logo-hline:after, 
+.white-logo-hline:before, .white-logo-hline:after {
+  content: "";
+  display: inline-block;
+  vertical-align: middle;
+  position: relative;
+  width: 30%;
+  border-top-style: solid;
+  border-top-width: 0.25rem;
+  margin-top: 30px;
+}
+
+.black-logo-hline:before, .white-logo-hline:before {
+  right: 2.5em;
+  margin-left: -50%;
+}
+
+.black-logo-hline:after, .white-logo-hline:after {
+  left: 2.5em;
+  margin-right: -50%;
+}
+
+.px-6 {
+  padding-left: 4rem !important;
+  padding-right: 4rem !important;
+}
+
+.px-7 {
+  padding-left: 5rem !important;
+  padding-right: 5rem !important;
+}
+
+.px-8 {
+  padding-left: 6rem !important;
+  padding-right: 6rem !important;
+}
+
+.black-border {
+  border: 2px solid black;
+}
+
+.white-border {
+  border: 2px solid white;
+}
+
+#map-container {
+  // equals mb-4
+  margin-bottom: 1.5rem;
+
+  @media (min-width: 992px) {
+    margin-bottom: 0rem;
+  }
+}
+
+#map {
+  min-height: 250px;
+}
+
+textarea {
+  resize: none;
+}
+
+#success {
+  position: relative;
+  width: 100%;
+
+  .alert {
+    position: absolute;
+    z-index: 1041;
+    width: 100%;
+  }
+}
+
+::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+  color: darken(white, 30%) !important;
+}
+::-moz-placeholder { /* Firefox 19+ */
+  color: white !important;
+}
+:-ms-input-placeholder { /* IE 10+ */
+  color: white !important;
+}
+:-moz-placeholder { /* Firefox 18- */
+  color: white !important;
+}
