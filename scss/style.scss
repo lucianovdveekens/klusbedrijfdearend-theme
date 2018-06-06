@@ -5,14 +5,14 @@ Description: todo
 Version: 0.0.1
 Tags: klusbedrijf
 */
-@import "variables.scss";
-@import "mixins.scss";
-@import "global.scss";
-@import "navbar.scss";
-@import "masthead.scss";
-@import "about.scss";
-@import "portfolio.scss";
-@import "contact.scss";
-@import "footer.scss";
-@import "bootstrap-overrides.scss";
-@import "slider.scss";
+@import "_partials/variables";
+@import "_partials/mixins";
+@import "_partials/global";
+@import "_partials/navbar";
+@import "_partials/masthead";
+@import "_partials/about";
+@import "_partials/portfolio";
+@import "_partials/contact";
+@import "_partials/footer";
+@import "_partials/bootstrap-overrides";
+@import "_partials/slider";
