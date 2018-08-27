@@ -83,6 +83,8 @@ $lg-arrow: 80px;
     
     padding-left: $sm-arrow;
     padding-right: $sm-arrow;
+
+    height: auto;
     
     .review-description, .review-image {
         padding-left: 10px;
@@ -140,6 +142,7 @@ $lg-arrow: 80px;
         width: $sm-arrow;
         height: $sm-arrow;
         margin-top: $sm-arrow / -2;
+        z-index: 999;
     }
     
     .slick-prev:before, .slick-next:before {

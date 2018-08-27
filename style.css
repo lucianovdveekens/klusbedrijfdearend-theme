@@ -111,11 +111,11 @@ section {
   margin-right: auto; }
 
 .black-logo-hline {
-  background-image: url("../images/eagle-black2.png");
+  background-image: url("images/eagle-black.png");
   color: black; }
 
 .white-logo-hline {
-  background-image: url("../images/eagle-white.png");
+  background-image: url("images/eagle-white.png");
   color: white; }
 
 .black-logo-hline:before, .black-logo-hline:after,
@@ -194,6 +194,8 @@ textarea {
 #mainNav {
   font-weight: 700;
   font-family: 'Montserrat'; }
+  #mainNav a {
+    border-radius: 0.25rem !important; }
   #mainNav .navbar-brand {
     font-size: 1em;
     color: #fff; }
@@ -553,7 +555,8 @@ a {
   margin-left: 0px;
   margin-right: 0px;
   padding-left: 40px;
-  padding-right: 40px; }
+  padding-right: 40px;
+  height: auto; }
   #review-slider .slick-slide .review-description, #review-slider .slick-slide .review-image {
     padding-left: 10px;
     padding-right: 10px;
@@ -592,7 +595,8 @@ a {
 #review-slider .slick-next, #review-slider .slick-prev {
   width: 40px;
   height: 40px;
-  margin-top: -20px; }
+  margin-top: -20px;
+  z-index: 999; }
 
 #review-slider .slick-prev:before, #review-slider .slick-next:before {
   color: #000000;

@@ -1,5 +1,8 @@
 // Styling for the navbar
 #mainNav {
+  a {
+    border-radius: .25rem!important;
+  }
 
   @include heading-font;
   .navbar-brand {

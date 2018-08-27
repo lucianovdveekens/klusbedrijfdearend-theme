@@ -19,3 +19,6 @@ wp-content/plugins/hello.php
 
 node_modules/
 css/
+/nbproject/private/
+.DS_Store
+vendor

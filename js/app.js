@@ -2,7 +2,7 @@
   "use strict"; // Start of use strict
 
   // Smooth scrolling using jQuery easing
-  $('a.js-scroll-trigger[href*="#"]:not([href="#"])').click(function() {
+  $('.nav-link,.navbar-brand').click(function() {
     if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
       var target = $(this.hash);
       target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
@@ -78,12 +78,10 @@ $(document).ready(function(){
   $('.slider').slick({
     dots: true,
     arrows: false,
-    autoplay: true,
-    autoplaySpeed: 5000,
     pauseOnHover: false,
     pauseOnFocus: false,
     mobileFirst: true,
-    slide: 'div'
+    // slide: 'div'
   });
 
   $('.slider').slickLightbox({
@@ -94,6 +92,7 @@ $(document).ready(function(){
   $('#review-slider').slick({
     dots: false,
     arrows: true,
-    mobileFirst: true
+    mobileFirst: true,
+    adaptiveHeight: true
   });
 });
