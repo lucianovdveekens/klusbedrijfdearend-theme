@@ -1,19 +1,7 @@
 (function($) {
   "use strict"; // Start of use strict
 
-  // Smooth scrolling using jQuery easing
-  $('.nav-link,.navbar-brand').click(function() {
-    if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
-      var target = $(this.hash);
-      target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
-      if (target.length) {
-        $('html, body').animate({
-          scrollTop: (target.offset().top - 70)
-        }, 1000, "easeInOutExpo");
-        return false;
-      }
-    }
-  });
+
 
   // Scroll to top button appear
   $(document).scroll(function() {
@@ -76,6 +64,20 @@
     $('.navbar-collapse').collapse('hide');
   });
 
+  // Smooth scrolling using jQuery easing
+  $('a.js-scroll-trigger[href*="#"]:not([href="#"])').click(function() {
+    console.log("clicked!!!");
+    if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
+      var target = $(this.hash);
+      target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
+      if (target.length) {
+        $('html, body').animate({
+          scrollTop: (target.offset().top - 70)
+        }, 1000, "easeInOutExpo");
+        return false;
+      }
+    }
+  });
 })(jQuery); // End of use strict
 
 $(document).ready(function(){
