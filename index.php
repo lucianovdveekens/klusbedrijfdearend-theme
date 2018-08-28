@@ -10,7 +10,7 @@
     <title>Klusbedrijf De Arend - Zaandam</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,700">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic">
-    <link rel="shortcut icon" type="image/x-icon" href="<?php echo get_template_directory_uri() . '/assets/images/favicon.ico' ?>" />
+    <link rel="shortcut icon" type="image/x-icon" href="<?php echo get_template_directory_uri() . '/favicon.ico' ?>" />
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-114305707-1"></script>
     <script>
