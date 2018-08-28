@@ -25,11 +25,6 @@
     }
   });
 
-  // Closes responsive menu when a scroll trigger link is clicked
-  $('.js-scroll-trigger').click(function() {
-    $('.navbar-collapse').collapse('hide');
-  });
-
   // Activate scrollspy to add active class to navbar items on scroll
   $('body').scrollspy({
     target: '#mainNav',
@@ -70,6 +65,15 @@
     }).on("blur", ".floating-label-form-group", function() {
       $(this).removeClass("floating-label-form-group-with-focus");
     });
+  });
+
+  // Add custom classes to links in menu. I can't seem to add these using PHP or the admin UI.
+  $(".nav-link").addClass("py-3 px-0 px-lg-3 rounded js-scroll-trigger");
+  $(".menu-item").addClass("mx-0 mx-lg-1");
+
+  // Closes responsive menu when a scroll trigger link is clicked
+  $('.js-scroll-trigger').click(function() {
+    $('.navbar-collapse').collapse('hide');
   });
 
 })(jQuery); // End of use strict

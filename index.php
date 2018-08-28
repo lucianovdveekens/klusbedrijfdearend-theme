@@ -22,9 +22,6 @@
     <?php wp_head();?>
 </head>
 <body id="page-top">
-    <!-- Navigation -->
-    <!-- TODO: consider moving to header.php? -->
-    <!-- wp_nav_menu(array('theme_location' => 'my-menu')); -->
     <nav class="navbar navbar-expand-lg bg-secondary fixed-top" id="mainNav">
         <div class="container">
             <a class="navbar-brand js-scroll-trigger" href="#page-top">
@@ -40,6 +37,7 @@
                 'menu' => 'my-menu',
                 'depth' => 2,
                 'container' => 'div',
+                'container_id' => 'navbarResponsive',
                 'container_class' => 'navbar-collapse collapse',
                 'menu_class' => 'navbar-nav ml-auto',
                 'fallback_cb' => 'wp_bootstrap_navwalker::fallback',
