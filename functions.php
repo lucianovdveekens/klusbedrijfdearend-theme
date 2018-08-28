@@ -17,9 +17,9 @@ wp_enqueue_script('jquery.magnific-popup', 'https://cdnjs.cloudflare.com/ajax/li
 wp_enqueue_script('slick', 'https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.4.1/slick.min.js');
 wp_enqueue_script('slick-lightbox', 'https://cdnjs.cloudflare.com/ajax/libs/slick-lightbox/0.2.12/slick-lightbox.min.js');
 
-wp_enqueue_script('app', get_template_directory_uri() . '/js/app.js', array(), '1.0', true );
-wp_enqueue_script('contact', get_template_directory_uri() . '/js/contact_me.js');
-wp_enqueue_script('jqBootstrapValidation', get_template_directory_uri() . '/js/jqBootstrapValidation.js');
+wp_enqueue_script('app', get_template_directory_uri() . '/assets/js/app.js', array(), '1.0', true );
+wp_enqueue_script('contact', get_template_directory_uri() . '/assets/js/contact_me.js');
+wp_enqueue_script('jqBootstrapValidation', get_template_directory_uri() . '/assets/js/jqBootstrapValidation.js');
 
 function register_my_menu() {
     register_nav_menu('my-menu', __('My Menu'));

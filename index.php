@@ -10,7 +10,7 @@
     <title>Klusbedrijf De Arend - Zaandam</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,700">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic">
-    <link rel="shortcut icon" type="image/x-icon" href="images/favicon.ico" />
+    <link rel="shortcut icon" type="image/x-icon" href="<?php echo get_template_directory_uri() . '/assets/images/favicon.ico' ?>" />
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-114305707-1"></script>
     <script>
@@ -25,7 +25,7 @@
     <nav class="navbar navbar-expand-lg bg-secondary fixed-top" id="mainNav">
         <div class="container">
             <a class="navbar-brand js-scroll-trigger" href="#page-top">
-                <img class="navbar-image img-fluid" src="<?php echo get_template_directory_uri() . '/images/eagle-white.png'; ?>" alt="Het logo van Klusbedrijf De Arend" />
+                <img class="navbar-image img-fluid" src="<?php echo get_template_directory_uri() . '/assets/images/eagle-white.png' ?>" alt="Het logo van Klusbedrijf De Arend" />
                 Klusbedrijf De Arend
             </a>
             <button class="text-uppercase navbar-toggler navbar-toggler-right bg-primary text-white rounded" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
@@ -64,7 +64,7 @@
             <div class="black-logo-hline"></div>
             <div class="row">
                 <div class="about-img-container col-lg-4 ml-auto">
-                    <img class="img-fluid about-img" src="<?php echo get_template_directory_uri() . '/images/arend.jpg'; ?>" alt="Een foto van Arend van der Veekens">
+                    <img class="img-fluid about-img" src="<?php echo get_template_directory_uri() . '/assets/images/arend.jpg' ?>" alt="Een foto van Arend van der Veekens">
                 </div>
                 <div class="col-lg-4 ml-auto">
                     <p class="lead text-secondary">
@@ -210,7 +210,7 @@
                 map: map,
                 label: markerLabel,
                 icon: {
-                    url: '<?php echo get_template_directory_uri() . '/images/eagle-black.png'; ?>',
+                    url: '<?php echo get_template_directory_uri() . '/assets/images/eagle-black.png'; ?>',
                     size: new google.maps.Size(60, 60),
                     anchor: new google.maps.Point(30, 30),
                     labelOrigin: new google.maps.Point(30, 5),

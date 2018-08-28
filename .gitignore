@@ -22,3 +22,5 @@ css/
 /nbproject/private/
 .DS_Store
 vendor
+
+style.css
