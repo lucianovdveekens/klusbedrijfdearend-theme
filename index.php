@@ -34,14 +34,14 @@
             </button>
             <?php
             wp_nav_menu(array(
-                'menu' => 'my-menu',
+                'theme_location' => 'my-menu',
                 'depth' => 2,
                 'container' => 'div',
                 'container_id' => 'navbarResponsive',
                 'container_class' => 'navbar-collapse collapse',
                 'menu_class' => 'navbar-nav ml-auto',
                 'fallback_cb' => 'wp_bootstrap_navwalker::fallback',
-                'walker' => new wp_bootstrap_navwalker(),
+                'walker' => new wp_bootstrap_navwalker()
             ));
             ?>
         </div>
