@@ -85,7 +85,7 @@
             endwhile;
             ?>
         </div>
-    </div> 
+    </div>
 </section>
 <!-- Contact Section -->
 <section class="bg-primary text-white mb-0" id="contact">
