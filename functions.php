@@ -31,8 +31,16 @@ add_action('init', 'register_my_menu');
 require_once get_template_directory() . '/class-wp-bootstrap-navwalker.php';
   
 // Use javascript's console.log() to debug PHP
-function console_log( $data ) {
+function console_log($data) {
 	echo '<script>';
 	echo 'console.log('. json_encode( $data ) .')';
 	echo '</script>';
 }
+
+require get_template_directory() . '/inc/widgets.php';
+
+function kda_widgets_init() {
+	register_widget('Kda_Header_Widget');
+}
+
+add_action('widgets_init', 'kda_widgets_init');
