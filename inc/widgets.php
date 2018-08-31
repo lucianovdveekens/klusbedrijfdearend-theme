@@ -1,7 +1,8 @@
 <?php 
 
 function widget_scripts() {
-    wp_enqueue_script('mediaUpload', get_template_directory_uri() . '/inc/media-upload.js');
+	wp_enqueue_script('mediaUpload', get_template_directory_uri() . '/inc/media-upload.js');
+	wp_enqueue_style('widgetStyle', get_template_directory_uri() . '/inc/widgets.css');
 }
 
 add_action('admin_enqueue_scripts', 'widget_scripts');
@@ -17,7 +18,6 @@ class Kda_Header_Widget extends WP_Widget {
         parent::__construct('kda-header', 'KDA Header', $widget_opts);
     }
 
-    // back-end form
     function form( $instance ) {
 		$small_title = isset( $instance['small_title'] ) ? esc_attr( $instance['small_title'] ) : '';
 		$big_title = isset( $instance['big_title'] ) ? esc_attr( $instance['big_title'] ) : '';
@@ -38,12 +38,12 @@ class Kda_Header_Widget extends WP_Widget {
 			<input id="<?php echo $this->get_field_id( 'tagline' ); ?>" class="widefat" name="<?php echo $this->get_field_name( 'tagline' ); ?>" type="text" value="<?php echo $tagline; ?>" />
 		</p>	
 		<p>
-			<label for="<?php echo $this->get_field_id('image_url'); ?>"><?php _e('Upload your image', 'talon'); ?></label>
-			<input class="widefat custom_media_url" id="<?php echo $this->get_field_id( 'image_url' ); ?>" name="<?php echo $this->get_field_name( 'image_url' ); ?>" type="text" value="<?php echo $image_url; ?>" size="3" />
-			<!-- TODO: showcase the chosen image here? -->
+			<div><label for="<?php echo $this->get_field_id('image_url'); ?>">Image</label></div>
+			<input type="hidden" class="custom_media_url" id="<?php echo $this->get_field_id( 'image_url' ); ?>" name="<?php echo $this->get_field_name( 'image_url' ); ?>" type="text" value="<?php echo $image_url; ?>" size="3" />
+			<img class="custom_media_image" width="150" height="150" alt="chosen image" src="<?php echo $image_url; ?>">
 		</p>
 		<p>
-			<input type="button" class="button button-primary custom_media_button" id="custom_media_button" value="<?php echo esc_attr__('Upload Image', 'talon'); ?>" />
+			<input type="button" class="button button-primary custom_media_button" id="custom_media_button" value="Upload Image" />
 		</p>	    
 		<?php
 	}
@@ -74,5 +74,26 @@ class Kda_Header_Widget extends WP_Widget {
 			</div>
 		</header>
 		<?php
+	}
+}
+
+class Kda_About_Widget extends WP_Widget {
+    
+    public function __construct() {
+        $widget_opts = array(
+            'classname' => 'kda-about-widget',
+            'description' => 'The about section'
+        );
+
+        parent::__construct('kda-header', 'KDA Header', $widget_opts);
+    }
+
+    function form( $instance ) {
+	}
+
+	function update( $new_instance, $old_instance ) {
+	}
+    
+	function widget( $args, $instance ) {
 	}
 }

@@ -1,0 +1,4 @@
+.custom_media_image {
+    object-fit: cover;
+    border: 1px solid #ddd;
+}
