@@ -49,6 +49,7 @@ require get_template_directory() . '/inc/widgets.php';
 
 function kda_widgets_init() {
 	register_widget('Kda_Header_Widget');
+	register_widget('Kda_About_Widget');
 }
 
 add_action('widgets_init', 'kda_widgets_init');
