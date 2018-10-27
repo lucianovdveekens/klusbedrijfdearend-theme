@@ -17,7 +17,7 @@ function cd_customizer_settings( $wp_customize ) {
 
     $wp_customize->add_section( 'about_me' , array(
         'title'      => 'About',
-        'priority'   => 30,
+        'priority'   => 31,
     ));
     $wp_customize->add_setting( 'left_column' , array(
         'default'     => 'placeholder',

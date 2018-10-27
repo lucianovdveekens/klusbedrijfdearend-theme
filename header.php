@@ -20,12 +20,11 @@
 		gtag('js', new Date());
 		gtag('config', 'UA-114305707-1');
 	</script>
-
-    <style type="text/css">
-      body { background-color: #<?php echo get_theme_mod('background_color'); ?> !important; }
-    </style> 
-
 	<?php wp_head();?>
+
+	<style type="text/css">
+      body { background-color: #<?php echo get_theme_mod('background_color'); ?> }
+    </style> 
 </head>
 
 <body id="page-top">

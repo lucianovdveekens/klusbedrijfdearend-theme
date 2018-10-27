@@ -43,12 +43,12 @@
       </div>
       <div id="left-column" class="col-lg-4 ml-auto">
         <p class="lead text-secondary">
-          <?php echo get_theme_mod('left_column', 'placeholder'); ?>
+          <?php echo nl2br(get_theme_mod('left_column', 'placeholder')); ?>
         </p>
       </div>
       <div id="right-column" class="col-lg-4 ml-auto">
         <p class="lead text-secondary">
-          <?php echo get_theme_mod('right_column', 'placeholder'); ?>
+          <?php echo nl2br(get_theme_mod('right_column', 'placeholder')); ?>
         </p>
       </div>
     </div>
