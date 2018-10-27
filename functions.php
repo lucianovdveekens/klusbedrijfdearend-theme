@@ -1,5 +1,6 @@
 <?php
 
+// STYLES
 function kda_enqueue_styles() 
 {
 	wp_enqueue_style('slick-css', 'https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.4.1/slick.min.css');
@@ -12,6 +13,7 @@ function kda_enqueue_styles()
 
 add_action('wp_enqueue_scripts', 'kda_enqueue_styles');
 
+// SCRIPTS
 function kda_enqueue_scripts() 
 {
 	wp_deregister_script('jquery');
@@ -31,12 +33,17 @@ function kda_enqueue_scripts()
 
 add_action('wp_enqueue_scripts', 'kda_enqueue_scripts');
 
+// MENU
 function register_my_menu() 
 {
     register_nav_menu('my-menu', __('My Menu'));
 }
 
 add_action('init', 'register_my_menu');
+
+// WIDGETS 
+require get_template_directory() . '/widgets/kda-header.php';
+require get_template_directory() . '/widgets/kda-about.php';
 
 function kda_widgets_init() 
 {
@@ -46,9 +53,13 @@ function kda_widgets_init()
 
 add_action('widgets_init', 'kda_widgets_init');
 
-require get_template_directory() . '/widgets/kda-about.php';
-require get_template_directory() . '/widgets/kda-header.php';
+function widget_scripts() {
+	wp_enqueue_script('widgetScripts', get_template_directory_uri() . '/js/widget.js');
+	wp_enqueue_style('widgetStyles', get_template_directory_uri() . '/css/widget.css');
+}
 
+add_action('admin_enqueue_scripts', 'widget_scripts');
+
+// OTHER
 require get_template_directory() . '/inc/helpers.php';
-
 require get_template_directory() . '/lib/class-wp-bootstrap-navwalker.php';

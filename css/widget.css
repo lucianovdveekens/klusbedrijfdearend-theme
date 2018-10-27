@@ -1,5 +1,5 @@
 .custom_media_image {
-    object-fit: cover;
+    object-fit: contain;
     border: 1px solid #ddd;
 }
 

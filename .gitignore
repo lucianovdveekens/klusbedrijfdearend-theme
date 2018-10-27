@@ -18,7 +18,6 @@ wp-content/plugins/hello.php
 /sitemap.xml.gz
 
 node_modules/
-css/
 /nbproject/private/
 .DS_Store
 vendor
