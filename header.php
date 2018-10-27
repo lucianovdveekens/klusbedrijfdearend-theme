@@ -27,7 +27,7 @@
 	<nav class="navbar navbar-expand-lg bg-secondary fixed-top" id="mainNav">
 		<div class="container">
 			<a class="navbar-brand js-scroll-trigger" href="#page-top">
-				<img class="navbar-image img-fluid" src="<?php echo get_template_directory_uri() . '/assets/images/eagle-white.png' ?>"
+				<img class="navbar-image img-fluid" src="<?php echo get_template_directory_uri() . '/images/eagle-white.png' ?>"
 				    alt="Het logo van Klusbedrijf De Arend" />
 				Klusbedrijf De Arend
 			</a>

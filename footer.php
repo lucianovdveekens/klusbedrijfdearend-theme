@@ -28,7 +28,7 @@
                 map: map,
                 label: markerLabel,
                 icon: {
-                    url: '<?php echo get_template_directory_uri() . '/assets/images/eagle-black.png'; ?>',
+                    url: '<?php echo get_template_directory_uri() . '/images/eagle-black.png'; ?>',
                     size: new google.maps.Size(60, 60),
                     anchor: new google.maps.Point(30, 30),
                     labelOrigin: new google.maps.Point(30, 5),

@@ -39,7 +39,7 @@
         <div class="black-logo-hline"></div>
         <div class="row">
             <div class="about-img-container col-lg-4 ml-auto">
-                <img class="img-fluid about-img" src="<?php echo get_template_directory_uri() . '/assets/images/arend.jpg' ?>"
+                <img class="img-fluid about-img" src="<?php echo get_template_directory_uri() . '/images/arend.jpg' ?>"
                     alt="Een foto van Arend van der Veekens">
             </div>
             <div class="col-lg-4 ml-auto">

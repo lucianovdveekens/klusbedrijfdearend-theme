@@ -23,7 +23,7 @@ class Kda_Header_Widget extends WP_Widget {
 		$big_title = isset( $instance['big_title'] ) ? esc_attr( $instance['big_title'] ) : '';
 		$tagline = isset( $instance['tagline'] ) ? esc_attr( $instance['tagline'] ) : '';
 
-		$default_header_image = get_template_directory_uri() . '/assets/images/logo.svg';
+		$default_header_image = get_template_directory_uri() . '/images/logo.svg';
 		$image_url = isset( $instance['image_url'] ) ? esc_url( $instance['image_url'] ) : $default_header_image; ?>
 
 		<p>
