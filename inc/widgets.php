@@ -24,9 +24,8 @@ class Kda_Header_Widget extends WP_Widget {
 		$tagline = isset( $instance['tagline'] ) ? esc_attr( $instance['tagline'] ) : '';
 
 		$default_header_image = get_template_directory_uri() . '/assets/images/logo.svg';
-		$image_url = isset( $instance['image_url'] ) ? esc_url( $instance['image_url'] ) : $default_header_image;
+		$image_url = isset( $instance['image_url'] ) ? esc_url( $instance['image_url'] ) : $default_header_image; ?>
 
-		?>
 		<p>
 			<label for="<?php echo $this->get_field_id( 'small_title' ); ?>">Small Title</label>
 			<input id="<?php echo $this->get_field_id( 'small_title' ); ?>" class="widefat" name="<?php echo $this->get_field_name( 'small_title' ); ?>" type="text" value="<?php echo $small_title; ?>" />
@@ -46,8 +45,7 @@ class Kda_Header_Widget extends WP_Widget {
 		</p>
 		<p>
 			<input type="button" class="button button-primary custom_media_button" id="custom_media_button" value="Upload Image" />
-		</p>	    
-		<?php
+		</p> <?php 
 	}
 
 	function update( $new_instance, $old_instance ) {
@@ -63,8 +61,8 @@ class Kda_Header_Widget extends WP_Widget {
 		$small_title = ( ! empty( $instance['small_title'] ) ) ? $instance['small_title'] : 'placeholder';
 		$big_title = ( ! empty( $instance['big_title'] ) ) ? $instance['big_title'] : 'placeholder';
 		$tagline = ( ! empty( $instance['tagline'] ) ) ? $instance['tagline'] : 'placeholder';
-		$image_url 	= isset( $instance['image_url'] ) ? esc_url( $instance['image_url'] ) : '';
-		?>
+		$image_url 	= isset( $instance['image_url'] ) ? esc_url( $instance['image_url'] ) : ''; ?>
+
 		<header class="masthead bg-primary text-white text-center">
 			<div class="header container">
 				<h4 class="mb-0"><?php echo $small_title ?></h4>
@@ -74,8 +72,7 @@ class Kda_Header_Widget extends WP_Widget {
 				</div>
 				<h4 class="font-weight-light mb-0"><?php echo $tagline ?></h4>
 			</div>
-		</header>
-		<?php
+		</header> <?php
 	}
 }
 
@@ -93,15 +90,17 @@ class Kda_About_Widget extends WP_Widget {
     function form( $instance ) {
 		$left_column = isset( $instance['left_column'] ) ? esc_attr( $instance['left_column'] ) : '';
 		$right_column = isset( $instance['right_column'] ) ? esc_attr( $instance['right_column'] ) : '';
-		$image_url 	= isset( $instance['image_url'] ) ? esc_url( $instance['image_url'] ) : '';
-		?>
+		$image_url 	= isset( $instance['image_url'] ) ? esc_url( $instance['image_url'] ) : ''; ?>
+
 		<p>
 			<label for="<?php echo $this->get_field_id( 'left_column' ); ?>">Left Column</label>
 			<textarea id="<?php echo $this->get_field_id( 'left_column' ); ?>" class="input" name="<?php echo $this->get_field_name( 'left_column' ); ?>" rows="10" cols="50"><?php echo $left_column; ?></textarea>
 		</p>
 		<p>
 			<label for="<?php echo $this->get_field_id( 'right_column' ); ?>">Right Column</label>
-			<textarea id="<?php echo $this->get_field_id( 'right_column' ); ?>" class="input" name="<?php echo $this->get_field_name( 'right_column' ); ?>" rows="10" cols="50"><?php echo $right_column; ?></textarea>
+			<textarea id="<?php echo $this->get_field_id( 'right_column' ); ?>" class="input" name="<?php echo $this->get_field_name( 'right_column' ); ?>" rows="10" cols="50">
+				<?php echo $right_column; ?>
+			 </textarea>
 		</p>
 		<p>
 			<div><label for="<?php echo $this->get_field_id('image_url'); ?>">Image</label></div>
@@ -110,8 +109,7 @@ class Kda_About_Widget extends WP_Widget {
 		</p>
 		<p>
 			<input type="button" class="button button-primary custom_media_button" id="custom_media_button" value="Upload Image" />
-		</p>	    
-		<?php
+		</p> <?php
 	}
 
 	function update( $new_instance, $old_instance ) {
@@ -125,8 +123,8 @@ class Kda_About_Widget extends WP_Widget {
 	function widget( $args, $instance ) {
 		$left_column = ( ! empty( $instance['left_column'] ) ) ? $instance['left_column'] : 'placeholder';
 		$right_column = ( ! empty( $instance['right_column'] ) ) ? $instance['right_column'] : 'placeholder';
-		$image_url 	= isset( $instance['image_url'] ) ? esc_url( $instance['image_url'] ) : '';
-		?>
+		$image_url 	= isset( $instance['image_url'] ) ? esc_url( $instance['image_url'] ) : ''; ?>
+
 		<section class="text-white mb-0" id="about">
 			<div class="container">
 				<h2 class="text-center text-secondary">Over</h2>
@@ -147,7 +145,6 @@ class Kda_About_Widget extends WP_Widget {
 					</div>
 				</div>
 			</div>
-		</section>
-		<?php
+		</section> <?php
 	}
 }
