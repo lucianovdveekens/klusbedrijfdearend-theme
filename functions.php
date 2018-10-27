@@ -1,6 +1,7 @@
 <?php
 
-function kda_styles() {
+function kda_enqueue_styles() 
+{
 	wp_enqueue_style('slick-css', 'https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.4.1/slick.min.css');
 	wp_enqueue_style('slick-theme-css', 'https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.4.1/slick-theme.min.css');
 	wp_enqueue_style('slick-lightbox-css', 'https://cdnjs.cloudflare.com/ajax/libs/slick-lightbox/0.2.12/slick-lightbox.css');
@@ -9,7 +10,10 @@ function kda_styles() {
 	wp_enqueue_style('style', get_stylesheet_directory_uri() . '/style.css');
 }
 
-function kda_scripts() {
+add_action('wp_enqueue_scripts', 'kda_enqueue_styles');
+
+function kda_enqueue_scripts() 
+{
 	wp_deregister_script('jquery');
 	wp_enqueue_script('jquery', 'https://code.jquery.com/jquery-3.3.1.min.js');
 
@@ -25,31 +29,26 @@ function kda_scripts() {
 	wp_enqueue_script('jqBootstrapValidation', get_template_directory_uri() . '/js/jqBootstrapValidation.js');
 }
 
-add_action( 'wp_enqueue_scripts', 'kda_styles' );
-add_action( 'wp_enqueue_scripts', 'kda_scripts' );
+add_action('wp_enqueue_scripts', 'kda_enqueue_scripts');
 
-
-function register_my_menu() {
+function register_my_menu() 
+{
     register_nav_menu('my-menu', __('My Menu'));
 }
 
 add_action('init', 'register_my_menu');
 
-// Register Custom Navigation Walker
-require_once get_template_directory() . '/class-wp-bootstrap-navwalker.php';
-  
-// Use javascript's console.log() to debug PHP
-function console_log($data) {
-	echo '<script>';
-	echo 'console.log('. json_encode( $data ) .')';
-	echo '</script>';
-}
-
-require get_template_directory() . '/inc/widgets.php';
-
-function kda_widgets_init() {
+function kda_widgets_init() 
+{
 	register_widget('Kda_Header_Widget');
 	register_widget('Kda_About_Widget');
 }
 
 add_action('widgets_init', 'kda_widgets_init');
+
+require get_template_directory() . '/widgets/kda-about.php';
+require get_template_directory() . '/widgets/kda-header.php';
+
+require get_template_directory() . '/inc/helpers.php';
+
+require get_template_directory() . '/lib/class-wp-bootstrap-navwalker.php';
