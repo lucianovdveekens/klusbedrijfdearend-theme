@@ -1,4 +1,4 @@
-$(document).ready(function() {
+jQuery(document).ready(function() {
 
     function media_upload(button_class) {
         $('body').on('click', button_class, function (e) {
