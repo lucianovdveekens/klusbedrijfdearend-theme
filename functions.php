@@ -41,25 +41,9 @@ function register_my_menu()
 
 add_action('init', 'register_my_menu');
 
-// WIDGETS 
-require get_template_directory() . '/widgets/kda-header.php';
-require get_template_directory() . '/widgets/kda-about.php';
-
-function kda_widgets_init() 
-{
-	register_widget('Kda_Header_Widget');
-	register_widget('Kda_About_Widget');
-}
-
-add_action('widgets_init', 'kda_widgets_init');
-
-function widget_scripts() {
-	wp_enqueue_script('widgetScripts', get_template_directory_uri() . '/js/widget.js');
-	wp_enqueue_style('widgetStyles', get_template_directory_uri() . '/css/widget.css');
-}
-
-add_action('admin_enqueue_scripts', 'widget_scripts');
-
 // OTHER
-require get_template_directory() . '/inc/helpers.php';
 require get_template_directory() . '/lib/class-wp-bootstrap-navwalker.php';
+
+require get_template_directory() . '/inc/widgets.php';
+require get_template_directory() . '/inc/customizer.php';
+require get_template_directory() . '/inc/helpers.php';
