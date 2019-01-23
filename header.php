@@ -33,7 +33,7 @@
 			<a class="navbar-brand js-scroll-trigger" href="#page-top">
 				<img class="navbar-image img-fluid" src="<?php echo get_template_directory_uri() . '/images/eagle-white.png' ?>"
 				    alt="Het logo van Klusbedrijf De Arend" />
-				Klusbedrijf De Arend
+				<span class="site-title"><?php echo get_bloginfo( 'name' ); ?></span>
 			</a>
 			<button class="text-uppercase navbar-toggler navbar-toggler-right bg-primary text-white rounded" type="button"
 			    data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false"

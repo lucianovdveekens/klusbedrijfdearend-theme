@@ -19,22 +19,30 @@ class Kda_About_Widget extends WP_Widget
         $right_column = isset($instance['right_column']) ? esc_attr($instance['right_column']) : '';
         $image_url = isset($instance['image_url']) ? esc_url($instance['image_url']) : '';?>
 
-        <p>
-          <label for="<?php echo $this->get_field_id('left_column'); ?>">Left Column</label>
-          <textarea id="<?php echo $this->get_field_id('left_column'); ?>" class="input" name="<?php echo $this->get_field_name('left_column'); ?>" rows="10" cols="50"><?php echo $left_column; ?></textarea>
-        </p>
-        <p>
-          <label for="<?php echo $this->get_field_id('right_column'); ?>">Right Column</label>
-          <textarea id="<?php echo $this->get_field_id('right_column'); ?>" class="input" name="<?php echo $this->get_field_name('right_column'); ?>" rows="10" cols="50"><?php echo $right_column; ?></textarea>
-        </p>
-        <p>
-          <div><label for="<?php echo $this->get_field_id('image_url'); ?>">Image</label></div>
-          <input type="hidden" class="custom_media_url" id="<?php echo $this->get_field_id('image_url'); ?>" name="<?php echo $this->get_field_name('image_url'); ?>" type="text" value="<?php echo $image_url; ?>" size="3" />
-          <img class="custom_media_image" width="150" height="150" alt="chosen image" src="<?php echo $image_url; ?>">
-        </p>
-        <p>
-          <input type="button" class="button button-primary custom_media_button" id="custom_media_button" value="Upload Image" />
-        </p> <?php
+        <div class="flex-space-around">
+          <div>
+            <p>
+              <div><label for="<?php echo $this->get_field_id('image_url'); ?>">Image</label></div>
+              <input type="hidden" class="custom_media_url" id="<?php echo $this->get_field_id('image_url'); ?>" name="<?php echo $this->get_field_name('image_url'); ?>" type="text" value="<?php echo $image_url; ?>" size="3" />
+              <img class="custom_media_image" width="150" height="150" alt="chosen image" src="<?php echo $image_url; ?>">
+            </p>
+            <p>
+              <input type="button" class="button button-primary custom_media_button" id="custom_media_button" value="Upload Image" />
+            </p> 
+          </div>
+          <div>
+            <p>
+              <label for="<?php echo $this->get_field_id('left_column'); ?>">Left Column</label>
+              <textarea id="<?php echo $this->get_field_id('left_column'); ?>" class="input" name="<?php echo $this->get_field_name('left_column'); ?>" rows="10" cols="50"><?php echo $left_column; ?></textarea>
+            </p>
+          </div>
+          <div>
+            <p>
+              <label for="<?php echo $this->get_field_id('right_column'); ?>">Right Column</label>
+              <textarea id="<?php echo $this->get_field_id('right_column'); ?>" class="input" name="<?php echo $this->get_field_name('right_column'); ?>" rows="10" cols="50"><?php echo $right_column; ?></textarea>
+            </p>
+          </div>
+        </div> <?php
     }
 
     public function update($new_instance, $old_instance)

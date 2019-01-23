@@ -29,7 +29,7 @@
           transform="translate(-917.02 -451.42)" />
       </svg>
     </div>
-    <h4 class="font-weight-light mb-0">Een scherpe blik voor elke klus</h4>
+    <h4 class="site-description font-weight-light mb-0"><?php echo get_bloginfo('description'); ?></h4>
   </div>
 </header>
 <!-- About Section -->
@@ -39,7 +39,8 @@
     <div class="black-logo-hline"></div>
     <div class="row">
       <div class="about-img-container col-lg-4 ml-auto">
-        <img class="img-fluid about-img" src="<?php echo get_template_directory_uri() . '/images/arend.jpg' ?>" alt="Een foto van Arend van der Veekens">
+        <img class="img-fluid about-img" src="<?php echo get_theme_mod('about_me_image'); ?>" 
+             alt="Een foto van Arend van der Veekens">
       </div>
       <div id="left-column" class="col-lg-4 ml-auto">
         <p class="lead text-secondary">

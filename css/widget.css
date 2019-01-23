@@ -6,3 +6,8 @@
 textarea.input {
     display: block;
 }
+
+.flex-space-around {
+    display: flex;
+    justify-content: space-around;
+}
