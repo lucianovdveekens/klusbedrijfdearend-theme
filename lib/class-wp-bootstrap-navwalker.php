@@ -105,6 +105,13 @@ if ( ! class_exists( 'WP_Bootstrap_Navwalker' ) ) {
 
 			$classes = empty( $item->classes ) ? array() : (array) $item->classes;
 
+			// Updating the CSS classes of a menu item in the WordPress Customizer preview results in all classes defined
+			// in that particular input box to come in as one big class string.
+			$split_on_spaces = function ( $class ) {
+				return preg_split( '/\s+/', $class );
+			};
+			$classes         = flatten( array_map( $split_on_spaces, $classes ) );
+
 			// Initialize some holder variables to store specially handled item
 			// wrappers and icons.
 			$linkmod_classes = array();
@@ -116,7 +123,7 @@ if ( ! class_exists( 'WP_Bootstrap_Navwalker' ) ) {
 			 * NOTE: linkmod and icon class arrays are passed by reference and
 			 * are maybe modified before being used later in this function.
 			 */
-			$classes = self::seporate_linkmods_and_icons_from_classes( $classes, $linkmod_classes, $icon_classes, $depth );
+			$classes = self::separate_linkmods_and_icons_from_classes( $classes, $linkmod_classes, $icon_classes, $depth );
 
 			// Join any icon classes plucked from $classes into a string.
 			$icon_class_string = join( ' ', $icon_classes );
@@ -396,7 +403,7 @@ if ( ! class_exists( 'WP_Bootstrap_Navwalker' ) ) {
 		 *
 		 * @return array  $classes         a maybe modified array of classnames.
 		 */
-		private function seporate_linkmods_and_icons_from_classes( $classes, &$linkmod_classes, &$icon_classes, $depth ) {
+		private function separate_linkmods_and_icons_from_classes( $classes, &$linkmod_classes, &$icon_classes, $depth ) {
 			// Loop through $classes array to find linkmod or icon classes.
 			foreach ( $classes as $key => $class ) {
 				// If any special classes are found, store the class in it's
@@ -551,5 +558,24 @@ if ( ! class_exists( 'WP_Bootstrap_Navwalker' ) ) {
 			}
 			return $output;
 		}
+	}
+
+	/**
+	 * Flattens a multidimensional array to a simple array.
+	 *
+	 * @param array $array a multidimensional array.
+	 *
+	 * @return array a simple array
+	 */
+	function flatten( $array ) {
+		$result = array();
+		foreach ( $array as $element ) {
+			if ( is_array( $element ) ) {
+				array_push( $result, ...flatten( $element ) );
+			} else {
+				$result[] = $element;
+			}
+		}
+		return $result;
 	}
 }
