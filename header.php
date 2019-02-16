@@ -23,7 +23,23 @@
 	<?php wp_head();?>
 
 	<style type="text/css">
-      body { background-color: #<?php echo get_theme_mod('background_color'); ?> }
+		<?php 
+			$bg_primary = get_theme_mod('background_primary_color'); 
+			$bg_secondary = get_theme_mod('background_secondary_color'); 
+		?>
+
+		.bg-primary {
+			background-color: <?php echo $bg_primary; ?> !important 
+		}
+		.bg-secondary { 
+		  	background-color: <?php echo $bg_secondary; ?> !important 
+		}
+		.navbar-nav > li.nav-item > a.nav-link.active {
+			background: <?php echo $bg_primary; ?> !important;
+			&:active, &:focus, &:hover {
+				background: <?php echo $bg_primary; ?> !important;
+			}
+		}
     </style> 
 </head>
 
@@ -55,3 +71,4 @@
 			?>
 		</div>
 	</nav>
+	

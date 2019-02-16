@@ -22,21 +22,6 @@ function kda_customize_register( $wp_customize )
     $wp_customize->get_setting('blogname')->transport = 'postMessage';
     $wp_customize->get_setting('blogdescription')->transport = 'postMessage';
 
-    /* Color */
-    $wp_customize->add_section('colors', array(
-        'title' => 'Kleuren',
-        'priority' => 30,
-    ));
-    $wp_customize->add_setting('background_color', array(
-        'default' => '#FFFFFF',
-        'transport' => 'postMessage',
-    ));
-    $wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'background_color', array(
-        'label' => 'Background Color',
-        'section' => 'colors',
-        'settings' => 'background_color',
-    )));
-
     /* About me */
     $wp_customize->add_section('about_me', array(
         'title' => 'Over mij',
@@ -88,6 +73,30 @@ function kda_customize_register( $wp_customize )
         'section' => 'contact',
         'settings' => 'address',
     ));
+
+    /* Color */
+    $wp_customize->add_section('colors', array(
+        'title' => 'Kleuren',
+        'priority' => 30,
+    ));
+    $wp_customize->add_setting('background_primary_color', array(
+        'default' => '#292929',
+        'transport' => 'postMessage',
+    ));
+    $wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'background_primary_color_control', array(
+        'label' => 'Background Primary Color',
+        'section' => 'colors',
+        'settings' => 'background_primary_color',
+    )));
+    $wp_customize->add_setting('background_secondary_color', array(
+        'default' => '#000000',
+        'transport' => 'postMessage',
+    ));
+    $wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'background_secondary_color_control', array(
+        'label' => 'Background Secondary Color',
+        'section' => 'colors',
+        'settings' => 'background_secondary_color',
+    )));
 }
 
 add_action('customize_register', 'kda_customize_register');

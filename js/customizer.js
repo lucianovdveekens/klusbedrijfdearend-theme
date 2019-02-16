@@ -1,5 +1,4 @@
 (function ($) {
-
 	/* Site title and description */
 	wp.customize('blogname', function (value) {
 		value.bind(function (newval) {
@@ -14,9 +13,24 @@
 	});
 
 	/* Color */
-	wp.customize('background_color', function (value) {
+	wp.customize('background_primary_color', function (value) {
 		value.bind(function (newval) {
-			$('body').css('background', newval);
+			$('.bg-primary').attr( 'style', 'background-color: ' + newval + ' !important');
+			$('head').append(`
+				<style type="text/css">
+					.navbar-nav > li.nav-item > a.nav-link.active { 
+						background: ${newval} !important; 
+						&:active, &:focus, &:hover { 
+							background: ${newval} !important; 
+						} 
+					}
+				</style>
+			`);
+		});
+	});
+	wp.customize('background_secondary_color', function (value) {
+		value.bind(function (newval) {
+			$('.bg-secondary').attr( 'style', 'background-color: ' + newval + ' !important');
 		});
 	});
 
@@ -43,5 +57,4 @@
 	function nl2br(str) {
 		return (str + '').replace(/([^>\r\n]?)(\r\n|\n\r|\r|\n)/g, '$1<br>$2');
 	}
-
 })(jQuery);

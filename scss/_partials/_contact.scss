@@ -83,11 +83,11 @@ form .row:first-child .floating-label-form-group {
 
 .form-control {
   color: #fff !important;
-  background-color: $primary
+  background-color: rgba(0, 0, 0, 0);
 }
 
 .form-control:focus {
-  background-color: $primary !important;
+  background-color: rgba(0, 0, 0, 0) !important;
 }
 
 .floating-label-form-group-with-value label {

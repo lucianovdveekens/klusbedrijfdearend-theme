@@ -1,4 +1,4 @@
-    <div class="copyright py-4 text-center text-white">
+    <div class="bg-secondary copyright py-4 text-center text-white">
         <div class="container">
             <small>&copy; Klusbedrijf De Arend Zaandam 2018</small>
         </div>
