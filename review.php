@@ -8,6 +8,6 @@
         </p>
     </div>
     <div class="col-lg-6 review-image">
-        <img class="black-border" src="<?php echo get_field( 'review_image' ); ?>" />
+        <img class="black-border" src="<?php echo wp_get_attachment_image_src( get_field( 'review_image' ), 'large' )[0]; ?>" />
     </div>
 </div>
