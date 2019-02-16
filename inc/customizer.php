@@ -24,7 +24,7 @@ function kda_customize_register( $wp_customize )
 
     /* Color */
     $wp_customize->add_section('colors', array(
-        'title' => 'Colors',
+        'title' => 'Kleuren',
         'priority' => 30,
     ));
     $wp_customize->add_setting('background_color', array(
@@ -71,6 +71,22 @@ function kda_customize_register( $wp_customize )
         'type' => 'textarea',
         'section' => 'about_me',
         'settings' => 'right_column',
+    ));
+
+    /* Contact */
+    $wp_customize->add_section('contact', array(
+        'title' => 'Contact',
+        'priority' => 30,
+    ));
+    $wp_customize->add_setting('address', array(
+        'default' => 'placeholder',
+        'transport' => 'postMessage',
+    ));
+    $wp_customize->add_control('address_control', array(
+        'label' => 'Adres',
+        'type' => 'textarea',
+        'section' => 'contact',
+        'settings' => 'address',
     ));
 }
 

@@ -100,16 +100,10 @@
       <div class="col-lg-5 mb-4">
 
         <div class="row h-100">
-          <div class="col-sm-6 col-lg-12">
+          <div id="address" class="col-sm-6 col-lg-12">
             <h5 class="mb-4">Adres</h5>
-            <p class="lead">Klusbedrijf De Arend
-              <br>Eline Vereplantsoen 14
-              <br>1507 PN Zaandam
-              <br>
-              <br>+31 6 83915993
-              <br>info@klusbedrijfdearend.nl
-              <br>
-              <br>KvK: 70506671
+            <p class="lead">
+              <?php echo nl2br( get_theme_mod( 'address', 'placeholder' ) ); ?>
             </p>
           </div>
           <div class="col-sm-6 col-lg-12" id="map-container">
