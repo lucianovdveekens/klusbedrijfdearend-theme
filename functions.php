@@ -44,6 +44,5 @@ add_action('init', 'register_my_menu');
 // OTHER
 require get_template_directory() . '/lib/class-wp-bootstrap-navwalker.php';
 
-require get_template_directory() . '/inc/widgets.php';
 require get_template_directory() . '/inc/customizer.php';
 require get_template_directory() . '/inc/helpers.php';

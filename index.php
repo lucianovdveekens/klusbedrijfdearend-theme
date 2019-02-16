@@ -1,4 +1,4 @@
-<?php get_header()?>
+<?php get_header() ?>
 
 <!-- Hero -->
 <header class="masthead bg-primary text-white text-center">
@@ -32,6 +32,7 @@
     <h4 class="site-description font-weight-light mb-0"><?php echo get_bloginfo('description'); ?></h4>
   </div>
 </header>
+
 <!-- About Section -->
 <section class="text-white mb-0" id="about">
   <div class="container">
@@ -55,34 +56,39 @@
     </div>
   </div>
 </section>
+
 <!-- Portfolio Grid Section -->
 <section class="bg-primary portfolio" id="portfolio">
   <div class="container">
     <h2 class="text-center text-white mb-0">Projecten</h2>
     <div class="white-logo-hline"></div>
-    <div class="row"> <?php
-      $args = array('post_type' => 'project');
-      $loop = new WP_Query($args);
-      while ($loop->have_posts()): $loop->the_post();
+    <div class="row"> 
+    <?php
+      $projects = new WP_Query( array('post_type' => 'project') );
+      while ($projects->have_posts()): $projects->the_post();
           get_template_part('project', get_post_format());
-      endwhile; ?>
+      endwhile; 
+    ?>
     </div>
   </div>
 </section>
+
 <!-- Reviews Section -->
 <section class="text-secondary mb-0" id="reviews">
   <div class="container">
     <h2 class="text-center text-secondary">Reviews</h2>
     <div class="black-logo-hline"></div>
-    <div id="review-slider"> <?php
-      $args = array('post_type' => 'review');
-      $loop = new WP_Query($args);
-      while ($loop->have_posts()): $loop->the_post();
+    <div id="review-slider"> 
+    <?php
+      $reviews = new WP_Query( array( 'post_type' => 'review' ) );
+      while ( $reviews->have_posts() ): $reviews->the_post();
           get_template_part('review', get_post_format());
-      endwhile; ?>
+      endwhile; 
+    ?>
     </div>
   </div>
 </section>
+
 <!-- Contact Section -->
 <section class="bg-primary text-white mb-0" id="contact">
   <div class="container">
@@ -152,4 +158,4 @@
   </div>
 </section>
 
-<?php get_footer()?>
+<?php get_footer() ?>

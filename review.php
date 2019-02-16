@@ -1,7 +1,7 @@
 <div class="row">
     <div class="col-lg-6 review-description">
         <p class="lead">
-            <?php echo preg_replace('/<img[^>]+./', '', get_the_content()); ?>
+            <?php echo get_field( 'review' ); ?> 
         </p>
         <p class="font-italic">
             <?php echo get_field( 'reviewer' ); ?>

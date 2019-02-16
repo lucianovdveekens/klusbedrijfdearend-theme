@@ -1,8 +1,23 @@
 <?php
 
-function kda_customize_register($wp_customize)
-{
+if ( class_exists( 'WP_Customize_Control' ) ) {
+    class WP_Customize_Project_Control extends WP_Customize_Control {
 
+        public $type = 'project';
+
+        public function render_content() { 
+		?>
+			<label>
+				<span class="customize-control-title"><?php echo esc_html($this->label); ?></span>
+				<textarea rows="5" style="width:100%;" <?php $this->link();?>><?php echo esc_textarea($this->value()); ?></textarea>
+			</label> 
+		<?php
+  		}
+    }
+}
+
+function kda_customize_register( $wp_customize )
+{
     /* Site title and description */
     $wp_customize->get_setting('blogname')->transport = 'postMessage';
     $wp_customize->get_setting('blogdescription')->transport = 'postMessage';
